@@ -1,0 +1,123 @@
+#include "bits/stdc++.h"
+#define ll long long 
+using namespace std;
+const ll N = 1e5+5;
+
+// Revise agin after when your free
+void sub_array(int n, vector<int> arr) { // O(N)
+	int c=0, len = 1; 
+	for(int i=1; i<n; i++) {
+		if(arr[i] >= arr[i-1]) {
+			len++;
+		} else {
+			c += (len * (len+1) / 2);
+			len = 1;
+		}
+	}
+	c += (len * (len+1) / 2);
+	cout<< c <<'\n';
+}
+
+// similar output
+void solve() {
+	int n; cin>>n; 
+	vector<int> arr(n);
+	for(int i=0; i<n; i++) cin>>arr[i];
+	// sub_array_2(n, arr);
+}
+
+
+
+
+
+
+ll GCD(int a, int b) {
+	if(b == 0) return a;
+	return GCD(b, a % b);
+}
+
+
+int LCM(int a, int b) {
+	int gcd_ = GCD(a, b);
+	return (a * b) / gcd_;
+}
+
+// void print_digiy(int n) {
+// 	while(n != 0) {
+// 		int digit = n % 10;
+// 		cout<< digit << '\n';
+// 		n = n / 10;
+// 	}
+// }
+
+// void print_digiy(int n) {
+// 	for( ; n != 0; n /= 10) {
+// 		int digit = n % 10;
+// 		cout<< digit << '\n';
+// 	}
+// }
+
+
+
+// ---------------------------
+// reverse number
+// ----------------------------
+void rev_digit(int n) {
+	while(n != 0) {
+		int digit = n % 10; // FASD
+		cout<< digit ;
+		n /= 10; // RD
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+   		
+   	// cout << LCM(20, 28);
+    rev_digit(4537);
+    // ll t=1; cin>>t;
+    // while(t--) solve();
+    // for(int i=1; i<=t; i++) {
+	// 	cout << "Case "<< i << ": "; 
+    // 	solve();
+    // 	cout<< '\n';
+    // }
+    // solve();
+    
+
+    // ll n = 352121254123123;
+    // cout << (int)(log10(n)+1) << '\n';
+    // print_digiy(n);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
